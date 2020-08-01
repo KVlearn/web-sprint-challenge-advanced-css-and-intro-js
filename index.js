@@ -368,16 +368,16 @@ function getHTML(data){
 for(i=0;i<=data.length-1;i++)
   {
     console.log(` 
-<div id="artist">
-<div class="image">
-    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>
-</div>
-<div class = "name">
-   <a href="${data[i].wikipedia}">${data[i].name}</a>
-</div>
-<div class = "bio">${data[i].bio}</div>
-</div>
-`);
+  <div id="artist">
+  <div class="image">
+  <img src="assets/${data[i].name}.jpg"/>
+  </div>
+  <div class = "name">
+     <a href="${data[i].wikipedia}">${data[i].name}</a>
+  </div>
+  <div class = "bio">${data[i].bio}</div>
+  </div>
+  `);
 }
 }
 
