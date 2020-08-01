@@ -207,16 +207,15 @@ const artists = [
 
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
-// console.log('Task#1:');
-// console.log(artists[0].name);
-// console.log(artists[2].bio);
+console.log('Task#1:');
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 console.log('Task#2:');
 console.log('Name before update:' + artists[8].name);
 artists[08].name='Vincent Van Gogh';
 // artists.slice(8,9)[0].name='Vincent Van Gogh';
-// artists.splice(8,1,'Kavya');
 console.log('Name after update:' + artists[8].name);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -375,7 +374,8 @@ for(i=0;i<=data.length-1;i++)
   <div class = "name">
      <a href="${data[i].wikipedia}">${data[i].name}</a>
   </div>
-  <div class = "bio">${data[i].bio}</div>
+  <div class = "bio">${data[i].bio}
+  </div>
   </div>
   `);
 }
@@ -383,23 +383,7 @@ for(i=0;i<=data.length-1;i++)
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-// /* Using Sort method */
-// /* Referred : https://forum.freecodecamp.org/t/how-does-sorting-array-numbers-works/389639/2 the sort function takes two parameter and returns 0,1 or -1, 0 means no change, -1 means swap b,a, +1 means move b go until end of array starting with a,b on first two elements of the array*/
-// function randomize(inArray){
-//    inArray.sort(function(){ 
-//      if (Math.random() < 0.5) { /*random() returns #between 0 and less than 1*/
-//        return -1
-//       } else {
-//         return 1;
-//       } });
-//    console.log(`check random: ${inArray}`); 
-//    return inArray;
-//  }
-// //  let newRandom=randomize(artists);
-//  console.log('Stretch#2:')
-//  console.log(randomize(artists));
-
- //  /*Method#2 - Using Fisher Yates Algorithm*/
+ //* New learning ! Using Fisher Yates Algorithm*/
 function randomize(inArray){
   let newPos=0;
   let temp; 
@@ -417,6 +401,21 @@ function randomize(inArray){
 console.log('Stretch#2:')
 console.log ('Here is your array in Random order : ' )
 console.log(randomize(artists));
+
+// /* Using Sort method */
+// /* Referred : https://forum.freecodecamp.org/t/how-does-sorting-array-numbers-works/389639/2 the sort function takes two parameter and returns 0,1 or -1, 0 means no change, -1 means swap b,a, +1 means move b go until end of array starting with a,b on first two elements of the array*/
+// function randomize(inArray){
+//    inArray.sort(function(){ 
+//      if (Math.random() < 0.5) { /*random() returns #between 0 &less than 1*/
+//        return -1
+//       } else {
+//         return 1;
+//       } });
+//    console.log(`check random: ${inArray}`); 
+//    return inArray;
+//  }
+//  console.log('Stretch#2:')
+//  console.log(randomize(artists));
 
 /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
