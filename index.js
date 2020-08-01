@@ -364,12 +364,15 @@ The function should console.log 50 chunks of HTML code that match the structure 
 console.log('Stretch#1:');
 getHTML(artists);
 function getHTML(data){
+
 for(i=0;i<=data.length-1;i++)
   {
+    sName= data[i].name.replace(/\s/g, "-") //removes blank in name
+    // console.log(Sname);
     console.log(` 
   <div id="artist">
   <div class="image">
-  <img src="assets/${data[i].name}.jpg"/>
+  <img src="assets/${sName}.jpg"/>
   </div>
   <div class = "name">
      <a href="${data[i].wikipedia}">${data[i].name}</a>
