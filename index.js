@@ -241,23 +241,35 @@ console.log('Task#4:');
 console.log(`Here are the 20th Century Artists: ${get20s(artists)}`);
 
 function get20s(yourArray){
-let outputArray=[];
-let yRange="";
-let startYear=0,endYear=0;
-for(i=0;i<yourArray.length;i++){
-  yRange= yourArray[i].years;
-  startYear=yRange.substr(0,4); /*start from index,how many char to extract */
-  endYear=yRange.substr(7,4);
-  // console.log('Yrange:')
-  // console.log(yRange)
-  // console.log(startYear)
-  // console.log(endYear)
-   if ((startYear>=1900) && (endYear <=2000)){
-  outputArray.push(yourArray[i].name);
+  let outputArray=[];
+  let yRange;
+  for(i=0;i<yourArray.length;i++){
+    yRange=yourArray[i].years.split(" ");
+    if((yRange[0].includes(19)) && (yRange[2].includes(19))){
+       if((yRange[0]>=1900) && (yRange[2]<2000)){
+      outputArray.push(yourArray[i].name);}
   }
+} 
+return outputArray;
 }
-return (outputArray);
-}
+// function get20s(yourArray){
+// let outputArray=[];
+// let yRange="";
+// let startYear=0,endYear=0;
+// for(i=0;i<yourArray.length;i++){
+//   yRange= yourArray[i].years;
+//   startYear=yRange.substr(0,4); /*start from index,how many char to extract */
+//   endYear=yRange.substr(7,4);
+//   // console.log('Yrange:')
+//   // console.log(yRange)
+//   // console.log(startYear)
+//   // console.log(endYear)
+//    if ((startYear>=1900) && (endYear <2000)){
+//   outputArray.push(yourArray[i].name);
+//   }
+// }
+// return (outputArray);
+// }
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -368,7 +380,7 @@ function getHTML(data){
 for(i=0;i<=data.length-1;i++)
   {
     sName= data[i].name.replace(/\s/g, "-") //removes blank in name
-    // console.log(Sname);
+    // console.log(Sname); \s all white spaces globally & replace with -
     console.log(` 
   <div id="artist">
   <div class="image">
